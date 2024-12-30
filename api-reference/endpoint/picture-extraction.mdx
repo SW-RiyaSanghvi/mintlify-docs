@@ -1,0 +1,47 @@
+---
+title: 'Picture Extraction API'
+description: 'API for extracting the image of a person from any document'
+---
+
+# Picture Extraction API
+
+## Endpoint
+
+**POST** `/picture-extraction`
+
+## Description
+
+Extracts the image of the person from any document.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file of the document.
+
+## Response
+
+- **200 OK**: Returns the extracted picture.
+- **400 Bad Request**: If the picture is not detected or the image is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/picture-extraction" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/document.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "photo_detected": true,
+  "photo_image": "base64-encoded-image-data"
+}
+``` 

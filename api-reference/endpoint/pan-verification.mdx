@@ -1,0 +1,47 @@
+---
+title: 'PAN Verification API'
+description: 'API for complete end-to-end PAN verification from images'
+---
+
+# PAN Verification API
+
+## Endpoint
+
+**POST** `/pan-verification`
+
+## Description
+
+Complete end-to-end PAN verification from images.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file of the PAN card.
+
+## Response
+
+- **200 OK**: Returns verification results.
+- **400 Bad Request**: If the image is invalid or verification fails.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/pan-verification" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/pan-card.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "verified",
+  "pan_number": "ABCDE1234F",
+  "name": "John Doe"
+}
+``` 

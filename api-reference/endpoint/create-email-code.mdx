@@ -1,0 +1,46 @@
+---
+title: 'Create Email Code API'
+description: 'API for sending a verification code to an email'
+---
+
+# Create Email Code API
+
+## Endpoint
+
+**POST** `/create-email-code`
+
+## Description
+
+Sends a verification code to an email.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `email`: The email address to send the code to.
+
+## Response
+
+- **200 OK**: If the code is sent successfully.
+- **400 Bad Request**: If the email is invalid.
+- **500 Internal Server Error**: If the code cannot be sent.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/create-email-code" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"email": "user@example.com"}'
+```
+
+### Response
+
+```json
+{
+  "message": "Verification code sent successfully"
+}
+``` 

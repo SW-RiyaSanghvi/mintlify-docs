@@ -1,0 +1,49 @@
+---
+title: 'Number Details Extraction API'
+description: 'API for verifying phone number details'
+---
+
+# Number Details Extraction API
+
+## Endpoint
+
+**POST** `/number-details-extraction`
+
+## Description
+
+Verifies phone number details.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `phone_number`: The phone number to verify.
+  - `region`: Optional region code.
+
+## Response
+
+- **200 OK**: Returns verification results.
+- **400 Bad Request**: If the phone number is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/number-details-extraction" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"phone_number": "1234567890", "region": "IN"}'
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "valid": true,
+  "carrier": "Carrier Name",
+  "region": "Region Name"
+}
+``` 

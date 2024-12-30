@@ -1,0 +1,47 @@
+---
+title: 'Create Mobile OTP API'
+description: 'API for sending an OTP to a mobile number'
+---
+
+# Create Mobile OTP API
+
+## Endpoint
+
+**POST** `/create_mobile_otp`
+
+## Description
+
+Sends an OTP to a mobile number.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `mobile`: The mobile number to send the OTP to.
+
+## Response
+
+- **200 OK**: If the OTP is sent successfully.
+- **400 Bad Request**: If the mobile number is invalid.
+- **500 Internal Server Error**: If the OTP cannot be sent.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/create_mobile_otp" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"mobile": "1234567890"}'
+```
+
+### Response
+
+```json
+{
+  "message": "OTP sent successfully",
+  "session_id": "session-id-123"
+}
+``` 

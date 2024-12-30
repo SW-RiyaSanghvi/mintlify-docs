@@ -1,0 +1,48 @@
+---
+title: 'Face Verification API'
+description: 'API for verifying face similarity between two images'
+---
+
+# Face Verification API
+
+## Endpoint
+
+**POST** `/face-verification`
+
+## Description
+
+Verifies face similarity between two images.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image1`: The first image file.
+  - `image2`: The second image file.
+
+## Response
+
+- **200 OK**: Returns similarity results.
+- **400 Bad Request**: If the images are invalid or cannot be compared.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/face-verification" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image1=@/path/to/your/image1.jpg" \
+-F "image2=@/path/to/your/image2.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "similarity_score": 0.95
+}
+``` 

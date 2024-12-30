@@ -1,0 +1,46 @@
+---
+title: 'Compress Nano Image API'
+description: 'API for compressing small images up to 20 MB to 40 KB'
+---
+
+# Compress Nano Image API
+
+## Endpoint
+
+**POST** `/compress-nano-image`
+
+## Description
+
+Compresses small images up to 20 MB to 40 KB.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file to be compressed.
+
+## Response
+
+- **200 OK**: Returns the compressed image.
+- **400 Bad Request**: If the image is invalid or cannot be compressed.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/compress-nano-image" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/nano-image.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "compressed_size": "40 KB"
+}
+``` 

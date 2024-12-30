@@ -1,0 +1,50 @@
+---
+title: 'Document Identification API'
+description: 'API for identifying the card, its side, and if it is blurry or grayscale'
+---
+
+# Document Identification API
+
+## Endpoint
+
+**POST** `/document-identification`
+
+## Description
+
+Identifies the card, its side, and checks if it's blurry or grayscale.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file of the document to be analyzed.
+
+## Response
+
+- **200 OK**: Returns the identification results.
+- **400 Bad Request**: If the image is not valid or cannot be processed.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/document-identification" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/image.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "details": {
+    "card_side": "front",
+    "is_blurry": false,
+    "is_grayscale": false
+  }
+}
+``` 

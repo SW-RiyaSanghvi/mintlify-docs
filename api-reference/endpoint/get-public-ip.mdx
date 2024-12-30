@@ -1,0 +1,39 @@
+---
+title: 'Get Public IP API'
+description: 'API for returning the public IP address of the client'
+---
+
+# Get Public IP API
+
+## Endpoint
+
+**GET** `/get-public-ip`
+
+## Description
+
+Returns the public IP address of the client.
+
+## Request
+
+- **Method**: GET
+
+## Response
+
+- **200 OK**: Returns the public IP address.
+
+## Example
+
+### Request
+
+```bash
+curl -X GET "http://your-api-url/get-public-ip" \
+-H "accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "public_ip": "192.168.1.1"
+}
+``` 

@@ -1,0 +1,49 @@
+---
+title: 'Aadhaar Verification API'
+description: 'API for complete end-to-end Aadhaar verification from images'
+---
+
+# Aadhaar Verification API
+
+## Endpoint
+
+**POST** `/aadhaar-verification`
+
+## Description
+
+Complete end-to-end Aadhaar verification from images.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image1`: The front image of the Aadhaar card.
+  - `image2`: The back image of the Aadhaar card.
+
+## Response
+
+- **200 OK**: Returns verification results.
+- **400 Bad Request**: If the images are invalid or verification fails.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/aadhaar-verification" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image1=@/path/to/your/aadhaar-front.jpg" \
+-F "image2=@/path/to/your/aadhaar-back.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "verified",
+  "aadhaar_number": "645612790918",
+  "name": "John Doe"
+}
+``` 

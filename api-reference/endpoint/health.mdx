@@ -1,0 +1,39 @@
+---
+title: 'Health Check API'
+description: 'API for checking the health status of the service'
+---
+
+# Health Check API
+
+## Endpoint
+
+**GET** `/health`
+
+## Description
+
+Checks the health status of the service.
+
+## Request
+
+- **Method**: GET
+
+## Response
+
+- **200 OK**: Returns the health status.
+
+## Example
+
+### Request
+
+```bash
+curl -X GET "http://your-api-url/health" \
+-H "accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "status": "healthy"
+}
+``` 

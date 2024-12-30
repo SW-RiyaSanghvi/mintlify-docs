@@ -1,0 +1,48 @@
+---
+title: 'Get Liveness Results API'
+description: 'API for fetching results for a Face Liveness session'
+---
+
+# Get Liveness Results API
+
+## Endpoint
+
+**POST** `/get_liveness_results`
+
+## Description
+
+Fetches results for a specific Face Liveness session.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `SessionId`: The ID of the session to fetch results for.
+
+## Response
+
+- **200 OK**: Returns session results.
+- **404 Not Found**: If the session is not found.
+- **500 Internal Server Error**: If results cannot be fetched.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/get_liveness_results" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"SessionId": "ea936c06-c6c7-4278-82d2-1a722ddc5001"}'
+```
+
+### Response
+
+```json
+{
+  "SessionId": "ea936c06-c6c7-4278-82d2-1a722ddc5001",
+  "Confidence": 0.98,
+  "Status": "SUCCESS"
+}
+``` 

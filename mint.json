@@ -1,6 +1,8 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Document Verification Project",
+  "description": "Comprehensive guide to the Document Verification project",
+  "version": "1.0.0",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -50,36 +52,132 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "title": "Introduction",
+      "path": "introduction.mdx"
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
+      "title": "Development",
+      "path": "development.mdx"
     },
     {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+      "title": "API Reference",
+      "children": [
+        {
+          "title": "Document Identification",
+          "path": "api-reference/endpoint/document-identification.mdx"
+        },
+        {
+          "title": "PAN Signature Extraction",
+          "path": "api-reference/endpoint/pan-signature-extraction.mdx"
+        },
+        {
+          "title": "Picture Extraction",
+          "path": "api-reference/endpoint/picture-extraction.mdx"
+        },
+        {
+          "title": "Internal Verification",
+          "path": "api-reference/endpoint/internal-verification.mdx"
+        },
+        {
+          "title": "Aadhaar Demographic Verification",
+          "path": "api-reference/endpoint/aadhaar-demographic-verification.mdx"
+        },
+        {
+          "title": "Aadhaar OCR",
+          "path": "api-reference/endpoint/aadhaar-ocr.mdx"
+        },
+        {
+          "title": "PAN OCR",
+          "path": "api-reference/endpoint/pan-ocr.mdx"
+        },
+        {
+          "title": "Image Quality Analyzer",
+          "path": "api-reference/endpoint/image-quality-analyzer.mdx"
+        },
+        {
+          "title": "Aadhaar Demographic OCR",
+          "path": "api-reference/endpoint/aadhaar-demographic-ocr.mdx"
+        },
+        {
+          "title": "Aadhaar Verification",
+          "path": "api-reference/endpoint/aadhaar-verification.mdx"
+        },
+        {
+          "title": "PAN Verification",
+          "path": "api-reference/endpoint/pan-verification.mdx"
+        },
+        {
+          "title": "Compress Extreme Image",
+          "path": "api-reference/endpoint/compress-extreme-image.mdx"
+        },
+        {
+          "title": "Compress Large Image",
+          "path": "api-reference/endpoint/compress-large-image.mdx"
+        },
+        {
+          "title": "Compress Medium Image",
+          "path": "api-reference/endpoint/compress-medium-image.mdx"
+        },
+        {
+          "title": "Compress Small Image",
+          "path": "api-reference/endpoint/compress-small-image.mdx"
+        },
+        {
+          "title": "Compress Nano Image",
+          "path": "api-reference/endpoint/compress-nano-image.mdx"
+        },
+        {
+          "title": "Number Details Extraction",
+          "path": "api-reference/endpoint/number-details-extraction.mdx"
+        },
+        {
+          "title": "Face Verification",
+          "path": "api-reference/endpoint/face-verification.mdx"
+        },
+        {
+          "title": "Create Liveness Session",
+          "path": "api-reference/endpoint/create_liveness_session.mdx"
+        },
+        {
+          "title": "Get Liveness Results",
+          "path": "api-reference/endpoint/get_liveness_results.mdx"
+        },
+        {
+          "title": "Create Email Code",
+          "path": "api-reference/endpoint/create-email-code.mdx"
+        },
+        {
+          "title": "Verify Email Code",
+          "path": "api-reference/endpoint/verify-email-code.mdx"
+        },
+        {
+          "title": "Create Mobile OTP",
+          "path": "api-reference/endpoint/create_mobile_otp.mdx"
+        },
+        {
+          "title": "Verify Mobile OTP",
+          "path": "api-reference/endpoint/verify_mobile_otp.mdx"
+        },
+        {
+          "title": "Get Public IP",
+          "path": "api-reference/endpoint/get-public-ip.mdx"
+        },
+        {
+          "title": "Get Geolocation",
+          "path": "api-reference/endpoint/get-geolocation.mdx"
+        },
+        {
+          "title": "Get Geolocation Plus",
+          "path": "api-reference/endpoint/get-geolocation-plus.mdx"
+        },
+        {
+          "title": "Reverse Geocode",
+          "path": "api-reference/endpoint/reverse-geocode.mdx"
+        },
+        {
+          "title": "Health Check",
+          "path": "api-reference/endpoint/health.mdx"
+        }
       ]
     }
   ],
@@ -87,5 +185,9 @@
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
     "linkedin": "https://linkedin.com/company/mintlify"
+  },
+  "settings": {
+    "theme": "default",
+    "custom_css": "styles.css"
   }
 }

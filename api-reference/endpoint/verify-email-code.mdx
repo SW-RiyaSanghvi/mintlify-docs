@@ -1,0 +1,46 @@
+---
+title: 'Verify Email Code API'
+description: 'API for verifying the email code'
+---
+
+# Verify Email Code API
+
+## Endpoint
+
+**POST** `/verify-email-code`
+
+## Description
+
+Verifies the email code.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `email`: The email address to verify.
+  - `code`: The verification code.
+
+## Response
+
+- **200 OK**: If the email is verified successfully.
+- **400 Bad Request**: If the email or code is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/verify-email-code" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"email": "user@example.com", "code": "123456"}'
+```
+
+### Response
+
+```json
+{
+  "message": "Email verified successfully"
+}
+``` 

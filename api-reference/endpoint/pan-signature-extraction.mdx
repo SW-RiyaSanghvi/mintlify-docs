@@ -1,0 +1,47 @@
+---
+title: 'PAN Signature Extraction API'
+description: 'API for extracting the signature from a PAN card'
+---
+
+# PAN Signature Extraction API
+
+## Endpoint
+
+**POST** `/pan-signature-extraction`
+
+## Description
+
+Extracts the signature of the person from a PAN card.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file of the PAN card.
+
+## Response
+
+- **200 OK**: Returns the extracted signature image.
+- **400 Bad Request**: If the signature is not found or the image is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/pan-signature-extraction" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/pan-card.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "signature_detected": true,
+  "signature_image": "base64-encoded-image-data"
+}
+``` 

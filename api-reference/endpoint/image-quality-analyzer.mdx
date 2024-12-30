@@ -1,0 +1,49 @@
+---
+title: 'Image Quality Analyzer API'
+description: 'API for analyzing images based on various standard scores'
+---
+
+# Image Quality Analyzer API
+
+## Endpoint
+
+**POST** `/image-quality-analyzer`
+
+## Description
+
+Analyzes images based on various standard scores like brisque, blurriness, etc.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file to be analyzed.
+
+## Response
+
+- **200 OK**: Returns quality scores.
+- **400 Bad Request**: If the image is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/image-quality-analyzer" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/image.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "quality_scores": {
+    "brisque": 25.4,
+    "blurriness": 0.8
+  }
+}
+``` 

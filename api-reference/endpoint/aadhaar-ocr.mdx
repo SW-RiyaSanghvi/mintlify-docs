@@ -1,0 +1,49 @@
+---
+title: 'Aadhaar OCR API'
+description: 'API for extracting relevant data from the Aadhaar card'
+---
+
+# Aadhaar OCR API
+
+## Endpoint
+
+**POST** `/aadhaar-ocr`
+
+## Description
+
+Extracts relevant data from the Aadhaar card.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image1`: The front image of the Aadhaar card.
+  - `image2`: The back image of the Aadhaar card.
+
+## Response
+
+- **200 OK**: Returns extracted data.
+- **400 Bad Request**: If the images are invalid or data cannot be extracted.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/aadhaar-ocr" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image1=@/path/to/your/aadhaar-front.jpg" \
+-F "image2=@/path/to/your/aadhaar-back.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "aadhaar_number": "645612790918",
+  "name": "John Doe"
+}
+``` 

@@ -1,0 +1,45 @@
+---
+title: 'Get Geolocation API'
+description: 'API for returning the geolocation of the client based on their IP address'
+---
+
+# Get Geolocation API
+
+## Endpoint
+
+**GET** `/get-geolocation`
+
+## Description
+
+Returns the geolocation of the client based on their IP address.
+
+## Request
+
+- **Method**: GET
+
+## Response
+
+- **200 OK**: Returns geolocation data.
+- **500 Internal Server Error**: If geolocation data cannot be fetched.
+
+## Example
+
+### Request
+
+```bash
+curl -X GET "http://your-api-url/get-geolocation" \
+-H "accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "ip": "192.168.1.1",
+  "country": "United States",
+  "region": "California",
+  "city": "San Francisco",
+  "latitude": 37.7749,
+  "longitude": -122.4194
+}
+``` 

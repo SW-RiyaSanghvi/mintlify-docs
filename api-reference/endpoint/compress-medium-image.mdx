@@ -1,0 +1,46 @@
+---
+title: 'Compress Medium Image API'
+description: 'API for compressing medium-sized images up to 250 MB to 40 KB'
+---
+
+# Compress Medium Image API
+
+## Endpoint
+
+**POST** `/compress-medium-image`
+
+## Description
+
+Compresses medium-sized images up to 250 MB to 40 KB.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file to be compressed.
+
+## Response
+
+- **200 OK**: Returns the compressed image.
+- **400 Bad Request**: If the image is invalid or cannot be compressed.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/compress-medium-image" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/medium-image.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "compressed_size": "40 KB"
+}
+``` 

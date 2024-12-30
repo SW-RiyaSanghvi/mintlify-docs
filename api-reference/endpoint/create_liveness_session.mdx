@@ -1,0 +1,42 @@
+---
+title: 'Create Liveness Session API'
+description: 'API for creating a Face Liveness Session'
+---
+
+# Create Liveness Session API
+
+## Endpoint
+
+**POST** `/create_liveness_session`
+
+## Description
+
+Creates a Face Liveness Session and returns the SessionId.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+
+## Response
+
+- **200 OK**: Returns the SessionId.
+- **500 Internal Server Error**: If the session cannot be created.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/create_liveness_session" \
+-H "accept: application/json" \
+-H "Content-Type: application/json"
+```
+
+### Response
+
+```json
+{
+  "SessionId": "ea936c06-c6c7-4278-82d2-1a722ddc5001"
+}
+``` 

@@ -1,0 +1,47 @@
+---
+title: 'PAN OCR API'
+description: 'API for extracting relevant data from the PAN card'
+---
+
+# PAN OCR API
+
+## Endpoint
+
+**POST** `/pan-ocr`
+
+## Description
+
+Extracts relevant data from the PAN card.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file of the PAN card.
+
+## Response
+
+- **200 OK**: Returns extracted data.
+- **400 Bad Request**: If the image is invalid or data cannot be extracted.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/pan-ocr" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/pan-card.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "pan_number": "ABCDE1234F",
+  "name": "John Doe"
+}
+``` 

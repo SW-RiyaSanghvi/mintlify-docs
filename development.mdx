@@ -1,7 +1,9 @@
 ---
 title: 'Development'
-description: 'Preview changes locally to update your docs'
+description: 'Installation and Configuration Guide for the Document Verification Project'
 ---
+
+# Installation Guide
 
 <Info>
   **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding.
@@ -45,62 +47,19 @@ If you attempt to run Mintlify on a port that's already in use, it will use the 
 Port 3000 is already in use. Trying 3001 instead.
 ```
 
-## Mintlify Versions
+# Configuration Details
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+### AWS Configuration
+- **.aws/config**: AWS CLI configuration file.
+- **.aws/credentials**: AWS credentials file.
+- **.aws/amplify/deployment-secrets.json**: Contains deployment secrets for AWS Amplify.
 
-<CodeGroup>
+### Git Configuration
+- **.git/**: Contains Git configuration and history files.
 
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+### Add-ons
+- **add_ons/**: Contains additional resources and configurations.
+  - **Aadhar&PAN.pt**: Model or data file for Aadhar and PAN processing.
+  - **chrome-setting-433110-g6-8d000ae3e8bb.json**: Chrome settings configuration.
+  - **GeoLite2-ASN.mmdb**: ASN database for geolocation.
+  - **GeoLite2-City.mmdb**: City database for geolocation.

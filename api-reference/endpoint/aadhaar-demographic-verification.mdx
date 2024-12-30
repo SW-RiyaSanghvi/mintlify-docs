@@ -1,0 +1,50 @@
+---
+title: 'Aadhaar Demographic Verification API'
+description: 'API for extracting basic details from Aadhaar images'
+---
+
+# Aadhaar Demographic Verification API
+
+## Endpoint
+
+**POST** `/aadhaar-demographic-verification`
+
+## Description
+
+Extracts basic details from Aadhaar images.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `info`: JSON object containing Aadhaar number, pincode, and date of birth.
+
+## Response
+
+- **200 OK**: Returns extracted demographic details.
+- **400 Bad Request**: If the information is invalid or cannot be processed.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/aadhaar-demographic-verification" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"aadhaar_number": "645612790918", "dob": "12/02/1998", "pincode": "380245"}'
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "details": {
+    "name": "John Doe",
+    "dob": "12/02/1998",
+    "pincode": "380245"
+  }
+}
+``` 

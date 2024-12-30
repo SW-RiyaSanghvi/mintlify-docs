@@ -1,0 +1,49 @@
+---
+title: 'Get Geolocation Plus API'
+description: 'API for getting dynamic geolocation info for the client\'s IP'
+---
+
+# Get Geolocation Plus API
+
+## Endpoint
+
+**GET** `/get-geolocation-plus`
+
+## Description
+
+Gets dynamic geolocation info for the client's IP.
+
+## Request
+
+- **Method**: GET
+
+## Response
+
+- **200 OK**: Returns detailed geolocation data.
+- **500 Internal Server Error**: If geolocation data cannot be fetched.
+
+## Example
+
+### Request
+
+```bash
+curl -X GET "http://your-api-url/get-geolocation-plus" \
+-H "accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "ip": "192.168.1.1",
+  "country": "United States",
+  "region": "California",
+  "city": "San Francisco",
+  "latitude": 37.7749,
+  "longitude": -122.4194,
+  "timezone": {
+    "id": "America/Los_Angeles",
+    "current_time": "2023-10-10T10:00:00Z"
+  }
+}
+``` 

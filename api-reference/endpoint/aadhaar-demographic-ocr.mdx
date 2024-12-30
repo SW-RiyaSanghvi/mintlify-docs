@@ -1,0 +1,52 @@
+---
+title: 'Aadhaar Demographic OCR API'
+description: 'API for extracting basic details from Aadhaar images'
+---
+
+# Aadhaar Demographic OCR API
+
+## Endpoint
+
+**POST** `/aadhaar-demographic-ocr`
+
+## Description
+
+Extracts basic details from Aadhaar images.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image1`: The front image of the Aadhaar card.
+  - `image2`: The back image of the Aadhaar card.
+
+## Response
+
+- **200 OK**: Returns extracted demographic details.
+- **400 Bad Request**: If the images are invalid or data cannot be extracted.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/aadhaar-demographic-ocr" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image1=@/path/to/your/aadhaar-front.jpg" \
+-F "image2=@/path/to/your/aadhaar-back.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "details": {
+    "name": "John Doe",
+    "dob": "12/02/1998",
+    "pincode": "380245"
+  }
+}
+``` 

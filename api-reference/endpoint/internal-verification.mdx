@@ -1,0 +1,49 @@
+---
+title: 'Internal Verification API'
+description: 'API for verifying extracted information from cards against government guidelines'
+---
+
+# Internal Verification API
+
+## Endpoint
+
+**POST** `/internal-verification`
+
+## Description
+
+Verifies if the extracted information from cards complies with government guidelines to mitigate tampering.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `info`: JSON object containing Aadhaar or PAN details.
+
+## Response
+
+- **200 OK**: Returns verification results.
+- **400 Bad Request**: If the information is invalid or does not comply with guidelines.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/internal-verification" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"Aadhaar_number": "645612790918"}'
+```
+
+### Response
+
+```json
+{
+  "status": "verified",
+  "details": {
+    "Aadhaar_number": "645612790918",
+    "compliance": true
+  }
+}
+``` 

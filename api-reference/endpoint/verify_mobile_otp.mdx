@@ -1,0 +1,46 @@
+---
+title: 'Verify Mobile OTP API'
+description: 'API for verifying the mobile OTP'
+---
+
+# Verify Mobile OTP API
+
+## Endpoint
+
+**POST** `/verify_mobile_otp`
+
+## Description
+
+Verifies the mobile OTP.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: application/json
+- **Parameters**:
+  - `mobile`: The mobile number to verify.
+  - `otp`: The OTP code.
+
+## Response
+
+- **200 OK**: If the OTP is verified successfully.
+- **400 Bad Request**: If the mobile number or OTP is invalid.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/verify_mobile_otp" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"mobile": "1234567890", "otp": "123456"}'
+```
+
+### Response
+
+```json
+{
+  "message": "OTP verified successfully"
+}
+``` 

@@ -1,0 +1,48 @@
+---
+title: 'Reverse Geocode API'
+description: 'API for reverse geocoding latitude and longitude into detailed location data'
+---
+
+# Reverse Geocode API
+
+## Endpoint
+
+**GET** `/reverse-geocode`
+
+## Description
+
+Reverse geocodes latitude and longitude into detailed location data.
+
+## Request
+
+- **Method**: GET
+- **Parameters**:
+  - `latitude`: Latitude of the location.
+  - `longitude`: Longitude of the location.
+  - `language`: Preferred language for the result.
+
+## Response
+
+- **200 OK**: Returns location data.
+- **500 Internal Server Error**: If location data cannot be fetched.
+
+## Example
+
+### Request
+
+```bash
+curl -X GET "http://your-api-url/reverse-geocode?latitude=37.7749&longitude=-122.4194&language=en" \
+-H "accept: application/json"
+```
+
+### Response
+
+```json
+{
+  "latitude": 37.7749,
+  "longitude": -122.4194,
+  "country": "United States",
+  "region": "California",
+  "city": "San Francisco"
+}
+``` 

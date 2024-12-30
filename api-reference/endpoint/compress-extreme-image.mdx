@@ -1,0 +1,46 @@
+---
+title: 'Compress Extreme Image API'
+description: 'API for compressing extremely large images to 40 KB'
+---
+
+# Compress Extreme Image API
+
+## Endpoint
+
+**POST** `/compress-extreme-image`
+
+## Description
+
+Compresses extremely large images to 40 KB.
+
+## Request
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Parameters**:
+  - `image`: The image file to be compressed.
+
+## Response
+
+- **200 OK**: Returns the compressed image.
+- **400 Bad Request**: If the image is invalid or cannot be compressed.
+
+## Example
+
+### Request
+
+```bash
+curl -X POST "http://your-api-url/compress-extreme-image" \
+-H "accept: application/json" \
+-H "Content-Type: multipart/form-data" \
+-F "image=@/path/to/your/large-image.jpg"
+```
+
+### Response
+
+```json
+{
+  "status": "success",
+  "compressed_size": "40 KB"
+}
+``` 
